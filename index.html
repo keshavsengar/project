@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dark/Light Mode Toggle</title>
+    <link rel="stylesheet" href="darklight.css">
+</head>
+<body>
+    <div class="navbar">
+    <img src="logo.png">
+      <div class="navlist">
+        <li><a href="#">home</a></li>
+        <li><a href="#">account</a></li>
+        <li><a href="#">new items</a></li>
+        <li><a href="#">about</a></li>
+        <li><label class="switch">
+                <input type="checkbox" id="modeSwitch">
+                <span class="slider round"></span>
+            </label>
+            <script src="script.js"></script></li>
+      </div>
+    </div>
+    <hr>
+    <h1>it's not just a coffee<br>it's <span>Starbucks.</span></h1><br>
+    <pre>The rise of the second wave of coffee culture is generally attributed to
+    Starbucks, which introduced Starbucks, which introduced a wider varietyof coffee experiences.
+    Starbucks serves hot and cold drinks, whole-bean coffee, 
+    juices, Frappuccino beverages, pastries, and snacks. Some offerings are seasonal or 
+    specific to the locality of the store. Depending on the country
+     most locations provide free Wi-Fi Internet access.</pre>
+
+     <div class="imgbox">
+        <img src="starcup.png">
+      </div>
+</body>
+</html>
+
+
+<style>@import url('https://fonts.googleapis.com/css?family=poppins:200,300,400,500,600,700,800,900&display=swap');
+
+
+    body {
+        transition: background-color 0.5s ease;
+    }
+    
+    /* Dark Mode */
+    body.dark-mode {
+        background-color: #222;
+        color: #fff;
+    }
+    
+    /* Light Mode */
+    body.light-mode {
+        background-color: #fff;
+        color: #222;
+    }
+    
+    /* Toggle switch */
+    .switch {
+        position: relative;
+        display: inline-block;
+        width: 60px;
+        height: 34px;
+    }
+    
+    .switch input {
+        opacity: 0;
+        width: 0;
+        height: 0;
+    }
+    
+    .slider {
+        position: absolute;
+        cursor: pointer;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background-color: #ccc;
+        transition: .4s;
+        border-radius: 34px;
+    }
+    
+    .slider:before {
+        position: absolute;
+        content: "";
+        height: 26px;
+        width: 26px;
+        left: 4px;
+        bottom: 4px;
+        background-color: white;
+        transition: .4s;
+        border-radius: 50%;
+    }
+    
+    input:checked + .slider {
+        background-color: #2196F3;
+    }
+    
+    input:checked + .slider:before {
+        transform: translateX(26px);
+    }
+    
+    .slider.round {
+        border-radius: 34px;
+    }
+    
+    .slider.round:before {
+        border-radius: 50%;
+    }
+     .navlist{
+         display: flex;
+         font-family: sans-serif;
+         align-items: center;
+         list-style: none;
+         gap: 50px;
+        
+     }
+    .navlist  li a{
+        color: #378429;
+        text-decoration: none;
+    
+    }
+     .navbar{
+         display: flex;
+         justify-content: space-between;
+         height: 4rem;
+         padding-left: 50px;
+    }
+    h1{
+        padding-left: 30px;
+        padding-top: 50px;
+        align-items: center;
+    }
+    span{
+        color: #378429;
+    }
+    pre{
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    }
+    .imgbox{
+        padding-left: 550px;
+    }</style>
+
+
+
+
+
+
+
+
+
+
+
+<script>
+const toggleSwitch = document.querySelector('#modeSwitch');
+
+function switchTheme(e) {
+    if (e.target.checked) {
+        document.body.classList.add('dark-mode');
+        document.body.classList.remove('light-mode');
+    } else {
+        document.body.classList.remove('dark-mode');
+        document.body.classList.add('light-mode');
+    }
+}
+
+toggleSwitch.addEventListener('change', switchTheme, false);
+
+</script>
